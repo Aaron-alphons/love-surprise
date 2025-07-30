@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Do you love me?</title>
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle, #f9c5d1, #fbc2eb);
+      height: 100vh;
+      font-family: 'Comic Sans MS', cursive;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #fff;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 8px #00000040;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 30px;
+      position: relative;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .yes {
+      background-color: #ff6f91;
+      color: white;
+    }
+
+    .no {
+      background-color: #6c5ce7;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Do you love me? 💖</h1>
+
+  <div class="buttons">
+    <button class="yes" onclick="goToLovePage()">Yes</button>
+    <button class="no" id="noBtn">No</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 100);
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+
+    function goToLovePage() {
+      window.location.href = "love.html";
+    }
+  </script>
+
+</body>
+</html>
